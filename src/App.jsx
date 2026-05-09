@@ -4,6 +4,7 @@ import {
   Linkedin, Github, MessageCircle, 
   ExternalLink, Menu, X, ArrowRight
 } from 'lucide-react';
+import profileImg from './assets/profile.jpeg';
 
 // === SECTION: App / Portfolio (Root) ===
 export default function App() {
@@ -337,9 +338,7 @@ const About = () => {
             <div className="relative aspect-square max-w-[320px] mx-auto group">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-orange-500 rounded-3xl transform rotate-6 opacity-60 blur-2xl group-hover:opacity-80 group-hover:rotate-12 transition-all duration-700"></div>
               <div className="absolute inset-0 backdrop-blur-md bg-white/5 border border-white/10 rounded-3xl flex items-center justify-center overflow-hidden z-10 group-hover:scale-[1.02] transition-transform duration-500">
-                <div className="font-playfair text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-white to-slate-400 select-none">
-                  PD
-                </div>
+                <img src={profileImg} alt="Proche de Dieu" className="w-full h-full object-cover rounded-3xl" />
               </div>
             </div>
           </div>
