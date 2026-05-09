@@ -335,10 +335,10 @@ const About = () => {
       <div className="container mx-auto px-6 lg:px-12">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           <div className="w-full lg:w-5/12 reveal">
-            <div className="relative aspect-square max-w-[320px] mx-auto group">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-orange-500 rounded-3xl transform rotate-6 opacity-60 blur-2xl group-hover:opacity-80 group-hover:rotate-12 transition-all duration-700"></div>
-              <div className="absolute inset-0 backdrop-blur-md bg-white/5 border border-white/10 rounded-3xl flex items-center justify-center overflow-hidden z-10 group-hover:scale-[1.02] transition-transform duration-500">
-                <img src={profileImg} alt="Proche de Dieu" className="w-full h-full object-cover rounded-3xl" />
+            <div className="relative max-w-[320px] mx-auto group">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-orange-500 rounded-[2rem] transform rotate-3 opacity-60 blur-2xl group-hover:opacity-80 group-hover:rotate-6 transition-all duration-700"></div>
+              <div className="relative backdrop-blur-md bg-white/5 border border-white/10 rounded-[2rem] overflow-hidden z-10 group-hover:scale-[1.02] transition-transform duration-500 p-2">
+                <img src={profileImg} alt="Proche de Dieu" className="w-full h-auto rounded-3xl object-contain shadow-inner" />
               </div>
             </div>
           </div>
