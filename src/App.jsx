@@ -5,6 +5,15 @@ import {
   ExternalLink, Menu, X, ArrowRight
 } from 'lucide-react';
 import profileImg from './assets/profile.jpeg';
+import imgMassConvoyeur from './assets/proche/MassConvoyeur.png';
+import imgFrutea from './assets/proche/Futa.png';
+import imgDeguLab from './assets/proche/degue lab.png';
+import imgHairLab1 from './assets/proche/1.png';
+import imgHairLab2 from './assets/proche/3.png';
+import imgCalendriers from './assets/proche/WhatsApp Image 2026-05-11 at 15.06.13.jpeg';
+import imgSacs from './assets/proche/WhatsApp Image 2026-05-11 at 15.06.14.jpeg';
+import imgStylos from './assets/proche/WhatsApp Image 2026-05-11 at 15.06.15.jpeg';
+import imgJummah from './assets/proche/JM (1).png';
 
 // === SECTION: App / Portfolio (Root) ===
 export default function App() {
@@ -432,12 +441,16 @@ const PortfolioSection = () => {
   const categories = ['Tous', 'Sites Web', 'Digitalisation', 'Print & Logo', 'Objets'];
   
   const projects = [
-    { title: "mass-convoyeur.com", category: "Sites Web", stack: "WordPress / Elementor", link: "https://mass-convoyeur.com" },
-    { title: "madjobeachhotel.com", category: "Sites Web", stack: "WordPress / UI", link: "https://madjobeachhotel.com" },
-    { title: "Flyer Événementiel", category: "Print & Logo", stack: "Illustrator / Canva" },
-    { title: "Logo PME", category: "Print & Logo", stack: "Illustrator" },
-    { title: "Goodies personnalisés", category: "Objets", stack: "Impression offset" },
-    { title: "Agenda Corporate", category: "Objets", stack: "Print sur mesure" },
+    { title: "Affiche Mass Convoyeur", category: "Print & Logo", stack: "Design Publicitaire", link: "https://mass-convoyeur.com", image: imgMassConvoyeur },
+    { title: "Affiche Frutéa", category: "Print & Logo", stack: "Design Publicitaire", image: imgFrutea },
+    { title: "Calendriers & Agendas", category: "Objets", stack: "Impression & Personnalisation", image: imgCalendriers },
+    { title: "Affiche HairLab", category: "Print & Logo", stack: "Design / Coiffure", image: imgHairLab1 },
+    { title: "Sacs Personnalisés", category: "Objets", stack: "Sacs d'entreprise", image: imgSacs },
+    { title: "mass-convoyeur.com", category: "Sites Web", stack: "WordPress / Elementor", link: "https://mass-convoyeur.com", image: imgMassConvoyeur },
+    { title: "Logo Degué Lab", category: "Print & Logo", stack: "Création de Logo", image: imgDeguLab },
+    { title: "Soins HairLab", category: "Print & Logo", stack: "Design / Esthétique", image: imgHairLab2 },
+    { title: "Stylos Mass Convoyeur", category: "Objets", stack: "Goodies d'entreprise", image: imgStylos },
+    { title: "Affiche Jummah", category: "Print & Logo", stack: "Design Réseaux Sociaux", image: imgJummah },
   ];
 
   const filteredProjects = activeTab === 'Tous' 
@@ -482,12 +495,21 @@ const PortfolioSection = () => {
           {filteredProjects.map((project, idx) => (
             <div key={idx} className="backdrop-blur-md bg-white/5 border border-white/10 rounded-xl overflow-hidden group hover:-translate-y-1 transition-all duration-300 hover:shadow-[0_10px_20px_rgba(0,0,0,0.3)] hover:border-white/20 flex flex-col">
               <div className="h-44 w-full bg-gradient-to-br from-slate-800 to-[#0F172A] flex items-center justify-center relative overflow-hidden shrink-0">
-                <div className="absolute inset-0 bg-blue-500/5 group-hover:bg-blue-500/20 transition-colors duration-500"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] to-transparent opacity-60"></div>
-                
-                <span className="font-syne text-4xl font-bold text-white/10 group-hover:text-white/20 group-hover:scale-110 transition-all duration-700 select-none uppercase">
-                  {project.title.substring(0, 2)}
-                </span>
+                {project.image ? (
+                  <>
+                    <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/20 to-transparent opacity-80"></div>
+                  </>
+                ) : (
+                  <>
+                    <div className="absolute inset-0 bg-blue-500/5 group-hover:bg-blue-500/20 transition-colors duration-500"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] to-transparent opacity-60"></div>
+                    
+                    <span className="font-syne text-4xl font-bold text-white/10 group-hover:text-white/20 group-hover:scale-110 transition-all duration-700 select-none uppercase">
+                      {project.title.substring(0, 2)}
+                    </span>
+                  </>
+                )}
                 
                 <div className="absolute top-3 right-3 px-2 py-1 bg-[#0F172A]/80 backdrop-blur-md rounded text-[10px] font-bold text-orange-400 border border-orange-500/20">
                   {project.category}
