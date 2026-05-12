@@ -613,22 +613,26 @@ const Contact = () => {
           
           <div className="max-w-3xl mx-auto reveal">
             {/* Form */}
-            <form className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-[2rem] p-8 md:p-10 shadow-2xl relative" onSubmit={(e) => e.preventDefault()}>
+            <form action="https://formsubmit.co/djiyehouemoise@gmail.com" method="POST" className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-[2rem] p-8 md:p-10 shadow-2xl relative">
+              <input type="hidden" name="_subject" value="Nouveau message depuis le portfolio Proche de Dieu !" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div className="space-y-2 group">
                   <label className="text-xs font-bold text-slate-400 ml-1 uppercase tracking-wider group-focus-within:text-blue-400 transition-colors">Nom complet</label>
-                  <input type="text" className="w-full bg-[#0F172A]/80 border border-white/5 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-blue-500 focus:bg-[#0F172A] transition-all placeholder:text-slate-600" placeholder="Jean Dupont" />
+                  <input type="text" name="name" required className="w-full bg-[#0F172A]/80 border border-white/5 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-blue-500 focus:bg-[#0F172A] transition-all placeholder:text-slate-600" placeholder="Jean Dupont" />
                 </div>
                 <div className="space-y-2 group">
                   <label className="text-xs font-bold text-slate-400 ml-1 uppercase tracking-wider group-focus-within:text-blue-400 transition-colors">Email</label>
-                  <input type="email" className="w-full bg-[#0F172A]/80 border border-white/5 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-blue-500 focus:bg-[#0F172A] transition-all placeholder:text-slate-600" placeholder="jean@exemple.com" />
+                  <input type="email" name="email" required className="w-full bg-[#0F172A]/80 border border-white/5 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-blue-500 focus:bg-[#0F172A] transition-all placeholder:text-slate-600" placeholder="jean@exemple.com" />
                 </div>
               </div>
               
               <div className="space-y-2 mb-6 group">
                 <label className="text-xs font-bold text-slate-400 ml-1 uppercase tracking-wider group-focus-within:text-blue-400 transition-colors">Type de besoin</label>
                 <div className="relative">
-                  <select className="w-full bg-[#0F172A]/80 border border-white/5 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-blue-500 focus:bg-[#0F172A] transition-all appearance-none cursor-pointer">
+                  <select name="service" required className="w-full bg-[#0F172A]/80 border border-white/5 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-blue-500 focus:bg-[#0F172A] transition-all appearance-none cursor-pointer">
                     <option value="" className="bg-slate-900">Sélectionnez un service</option>
                     <option value="web" className="bg-slate-900">Création Site Web</option>
                     <option value="digital" className="bg-slate-900">Digitalisation & Réseaux</option>
@@ -644,7 +648,7 @@ const Contact = () => {
               
               <div className="space-y-2 mb-8 group">
                 <label className="text-xs font-bold text-slate-400 ml-1 uppercase tracking-wider group-focus-within:text-blue-400 transition-colors">Votre message</label>
-                <textarea rows="4" className="w-full bg-[#0F172A]/80 border border-white/5 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-blue-500 focus:bg-[#0F172A] transition-all placeholder:text-slate-600 resize-none" placeholder="Décrivez votre projet ici..."></textarea>
+                <textarea name="message" required rows="4" className="w-full bg-[#0F172A]/80 border border-white/5 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-blue-500 focus:bg-[#0F172A] transition-all placeholder:text-slate-600 resize-none" placeholder="Décrivez votre projet ici..."></textarea>
               </div>
               
               <button type="submit" className="w-full relative group overflow-hidden rounded-xl">
